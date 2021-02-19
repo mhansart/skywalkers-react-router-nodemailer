@@ -1,0 +1,51 @@
+.btn-basis {
+  a {
+    padding: 15px 20px;
+    background-color: $first-color;
+    background-size: contain;
+    color: $second-color;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    position: relative;
+    font-family: $main-font;
+    font-size: $font-size-menu;
+    z-index: 0;
+    align-items: center;
+    i {
+      padding-left: 5px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: $second-color;
+      transition: all 0.3s;
+      z-index: -1;
+    }
+    &:hover {
+      z-index: 0;
+      color: $first-color;
+      i {
+        border-left: 8px solid $first-color;
+      }
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}
+.fa-caret-right {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-radius: 3px;
+  margin-left: 10px;
+
+  border-left: 8px solid $second-color;
+}

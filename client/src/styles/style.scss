@@ -1,0 +1,172 @@
+@use "variables" as *;
+@import "basic";
+@import "buttons";
+@import "menu_footer";
+@import "menu_fixe";
+@import "monCompte";
+@import "training_ultimate";
+@import "inscri_contact";
+@import "leclub";
+
+* {
+  box-sizing: border-box;
+}
+.accueil {
+  //   background-image: url("./../../public/img/accueil.jpg");
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  .container-accueil {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    overflow: hidden;
+    ul {
+      flex-direction: column;
+      align-items: center;
+      @media (min-width: 992px) {
+        flex-direction: row;
+      }
+      li {
+        a {
+          @media (max-width: 576px) {
+            padding: 7px 15px;
+          }
+        }
+        &:first-child {
+          a {
+            &::before {
+              @media (min-width: 992px) {
+                width: 0px;
+              }
+            }
+          }
+        }
+        a {
+          &::before {
+            width: 0;
+            @media (min-width: 992px) {
+              width: 1px;
+            }
+          }
+          &:hover {
+            &::before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .logo_big {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      img {
+        width: auto;
+        height: 180px;
+        @media (min-width: 360px) {
+          height: 200px;
+          width: auto;
+        }
+        @media (min-width: 576px) {
+          height: 240px;
+          width: auto;
+        }
+        @media (min-width: 992px) {
+          height: 380px;
+        }
+      }
+    }
+    .title {
+      font-weight: $font-weight-title;
+      margin: 0;
+      text-transform: uppercase;
+      color: $third-color;
+      display: inline;
+      text-align: center;
+      &--big {
+        font-size: 40px;
+      }
+      &--little {
+        font-size: $font-size-title;
+        margin: 15px 0 25px 0;
+        @media (max-width: 576px) {
+          font-size: 18px;
+        }
+      }
+      .point {
+        margin: 5px;
+      }
+    }
+  }
+}
+.container-content {
+  width: 100%;
+  background-color: $second-color;
+  padding-top: 150px;
+  position: relative;
+  .container-width {
+    width: 100%;
+    padding: 0 15px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 576px) {
+      width: 540px;
+      padding: 0;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {
+      width: 720px;
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+      width: 960px;
+    }
+
+    // X-Large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+      width: 1140px;
+    }
+
+    // XX-Large devices (larger desktops, 1400px and up)
+    @media (min-width: 1400px) {
+      width: 1320px;
+    }
+  }
+}
+
+.title-content {
+  color: $third-color;
+  display: inline-flex;
+  text-transform: uppercase;
+  font-size: $font-size-btitle;
+  position: relative;
+  background-color: $tc-opacity;
+  padding: 30px 30px 30px 42px;
+  margin: 0px auto 50px auto;
+  &.title-ultimate {
+    margin-bottom: 0;
+  }
+  @media (max-width: 576px) {
+    margin-bottom: 0px;
+  }
+  &::before {
+    content: "";
+    height: 24px;
+    width: 2px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: $first-color;
+  }
+}

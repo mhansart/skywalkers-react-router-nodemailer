@@ -1,0 +1,95 @@
+footer {
+  background-color: $second-color;
+  &.d-none {
+    display: none;
+  }
+  .subfooter {
+    // background-image: url("footer.png");
+    background-size: cover;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    @media (max-width: 576px) {
+      padding: 50px 15px;
+    }
+    .see-more-fb {
+      padding: 7px 15px;
+    }
+    a {
+      font-size: $font-size-p;
+    }
+  }
+  .container-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    padding: 15px 15px;
+    @media (min-width: 576px) {
+      width: 540px;
+      padding: 15px 0;
+      justify-content: space-between;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {
+      width: 720px;
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+      width: 960px;
+    }
+
+    // X-Large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+      width: 1140px;
+    }
+
+    // XX-Large devices (larger desktops, 1400px and up)
+    @media (min-width: 1400px) {
+      width: 1320px;
+    }
+    a {
+      display: block;
+      img {
+        width: auto;
+        height: 50px;
+      }
+    }
+    nav {
+      @media (max-width: 576px) {
+        display: none;
+      }
+      ul {
+        li {
+          a {
+            font-size: 18px;
+            &::before {
+              height: 8px;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            &:hover {
+              color: $third-color;
+              &::before {
+                width: 1px;
+              }
+            }
+          }
+          &:first-child {
+            a {
+              &:hover {
+                color: $third-color;
+                &::before {
+                  width: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
