@@ -2,7 +2,6 @@ import './styles/style.scss';
 import { useState } from 'react';
 import {
   Route,
-  BrowserRouter,
   HashRouter,
 } from 'react-router-dom';
 import Header from './components/header/Header';
