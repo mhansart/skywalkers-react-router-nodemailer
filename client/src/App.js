@@ -2,7 +2,7 @@ import './styles/style.scss';
 import { useState } from 'react';
 import {
   Route,
-  HashRouter,
+  BrowserRouter,
 } from 'react-router-dom';
 import Header from './components/header/Header';
 import Accueil from './components/accueil/Accueil';
@@ -20,7 +20,7 @@ function App() {
   const height = pageVisible === 'accueil' ? `${window.innerHeight}px` : '';
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="App" style={{ height }}>
         <Header isVisible={headerVisible} setMenuVisibility={setMenuVisibility} menuVisibility={menuVisibility} />
         <Route exact path="/"><Accueil handler={setPageVisible} setMenuVisibility={setMenuVisibility} /></Route>
@@ -32,7 +32,7 @@ function App() {
 
         <Footer isVisible={headerVisible} />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
